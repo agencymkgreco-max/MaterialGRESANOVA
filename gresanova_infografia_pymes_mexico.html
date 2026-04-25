@@ -1,0 +1,345 @@
+
+<h2 class="sr-only">Infografía: El 85% de las pymes mexicanas fracasan por falta de presencia digital y herramientas de administración — y cómo GRESANOVA puede cambiar eso.</h2>
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans, sans-serif); }
+
+  .wrap { padding: 1.5rem 0; display: flex; flex-direction: column; gap: 20px; }
+
+  .hero-card {
+    background: #501313;
+    border-radius: var(--border-radius-lg, 12px);
+    padding: 32px 28px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .hero-badge {
+    background: #A32D2D;
+    color: #F7C1C1;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .hero-stat {
+    font-size: 80px;
+    font-weight: 500;
+    color: #FCEBEB;
+    line-height: 1;
+  }
+  .hero-label {
+    font-size: 18px;
+    color: #F09595;
+    line-height: 1.4;
+    max-width: 380px;
+  }
+  .hero-source {
+    font-size: 11px;
+    color: #791F1F;
+    margin-top: 4px;
+  }
+
+  .donut-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .donut-card {
+    background: var(--color-background-primary);
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg, 12px);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .donut-label {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    text-align: center;
+    line-height: 1.4;
+  }
+  .donut-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--color-text-secondary);
+  }
+  .legend-dot {
+    width: 10px; height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .legend-val {
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-left: auto;
+  }
+
+  .causes-card {
+    background: var(--color-background-primary);
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg, 12px);
+    padding: 24px 28px;
+  }
+  .causes-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+  }
+  .cause-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .cause-row:last-child { margin-bottom: 0; }
+  .cause-label { font-size: 13px; color: var(--color-text-primary); min-width: 180px; }
+  .cause-bar-wrap { flex: 1; height: 8px; background: var(--color-background-secondary); border-radius: 4px; overflow: hidden; }
+  .cause-bar { height: 100%; border-radius: 4px; }
+  .cause-pct { font-size: 13px; font-weight: 500; color: var(--color-text-primary); min-width: 36px; text-align: right; }
+
+  .timeline-card {
+    background: var(--color-background-primary);
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg, 12px);
+    padding: 24px 28px;
+  }
+  .timeline-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 20px;
+  }
+  .tl-row { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
+  .tl-row:last-child { margin-bottom: 0; }
+  .tl-year {
+    font-size: 12px;
+    font-weight: 500;
+    color: #A32D2D;
+    min-width: 56px;
+    padding-top: 2px;
+  }
+  .tl-bar-col { flex: 1; }
+  .tl-bar-bg { height: 24px; background: var(--color-background-secondary); border-radius: 4px; overflow: hidden; position: relative; }
+  .tl-bar-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 10px; }
+  .tl-bar-text { font-size: 12px; font-weight: 500; color: #FCEBEB; }
+  .tl-sub { font-size: 11px; color: var(--color-text-tertiary); margin-top: 4px; }
+
+  .gresanova-card {
+    background: #085041;
+    border-radius: var(--border-radius-lg, 12px);
+    padding: 28px;
+  }
+  .gr-badge {
+    background: #1D9E75;
+    color: #E1F5EE;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 14px;
+  }
+  .gr-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #E1F5EE;
+    margin-bottom: 6px;
+  }
+  .gr-sub {
+    font-size: 14px;
+    color: #9FE1CB;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  .gr-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .gr-item {
+    background: #0F6E56;
+    border-radius: var(--border-radius-md, 8px);
+    padding: 12px 14px;
+  }
+  .gr-item-title { font-size: 13px; font-weight: 500; color: #E1F5EE; margin-bottom: 3px; }
+  .gr-item-desc { font-size: 12px; color: #9FE1CB; line-height: 1.4; }
+  .gr-cta {
+    background: #5DCAA5;
+    color: #04342C;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: var(--border-radius-md, 8px);
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+</style>
+
+<div class="wrap">
+
+  <div class="hero-card">
+    <span class="hero-badge">Crisis silenciosa — pymes México</span>
+    <div class="hero-stat">85%</div>
+    <p class="hero-label">de las pequeñas y medianas empresas en México fracasan antes de cumplir 2 años</p>
+    <p class="hero-source">Fuente: INEGI / INADEM — datos de mortalidad empresarial México</p>
+  </div>
+
+  <div class="donut-row">
+    <div class="donut-card">
+      <p class="donut-label" style="font-weight:500; color: var(--color-text-primary);">Tasa de cierre por etapa</p>
+      <div style="position:relative; width:120px; height:120px;">
+        <canvas id="donut1" role="img" aria-label="Gráfica de cierre de pymes por año: 34% en año 1, 27% en año 2, 15% en año 3, 9% restante">34% año 1, 27% año 2.</canvas>
+      </div>
+      <div class="donut-legend">
+        <div class="legend-item"><span class="legend-dot" style="background:#E24B4A;"></span>Año 1 <span class="legend-val">34%</span></div>
+        <div class="legend-item"><span class="legend-dot" style="background:#EF9F27;"></span>Año 2 <span class="legend-val">27%</span></div>
+        <div class="legend-item"><span class="legend-dot" style="background:#BA7517;"></span>Año 3 <span class="legend-val">15%</span></div>
+        <div class="legend-item"><span class="legend-dot" style="background:#D3D1C7;"></span>Sobreviven <span class="legend-val">15%</span></div>
+      </div>
+    </div>
+
+    <div class="donut-card">
+      <p class="donut-label" style="font-weight:500; color: var(--color-text-primary);">Negocios sin presencia digital</p>
+      <div style="position:relative; width:120px; height:120px;">
+        <canvas id="donut2" role="img" aria-label="Gráfica de negocios sin presencia digital: 72% sin estrategia digital, 28% con estrategia">72% sin estrategia digital activa.</canvas>
+      </div>
+      <div class="donut-legend">
+        <div class="legend-item"><span class="legend-dot" style="background:#A32D2D;"></span>Sin estrategia digital <span class="legend-val">72%</span></div>
+        <div class="legend-item"><span class="legend-dot" style="background:#1D9E75;"></span>Con estrategia <span class="legend-val">28%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="causes-card">
+    <p class="causes-title">Principales causas de cierre</p>
+    <div class="cause-row">
+      <span class="cause-label">Falta de presencia digital</span>
+      <div class="cause-bar-wrap"><div class="cause-bar" style="width:78%; background:#E24B4A;"></div></div>
+      <span class="cause-pct">78%</span>
+    </div>
+    <div class="cause-row">
+      <span class="cause-label">Sin herramientas de gestión</span>
+      <div class="cause-bar-wrap"><div class="cause-bar" style="width:71%; background:#EF9F27;"></div></div>
+      <span class="cause-pct">71%</span>
+    </div>
+    <div class="cause-row">
+      <span class="cause-label">Falta de estrategia de ventas</span>
+      <div class="cause-bar-wrap"><div class="cause-bar" style="width:65%; background:#EF9F27;"></div></div>
+      <span class="cause-pct">65%</span>
+    </div>
+    <div class="cause-row">
+      <span class="cause-label">Sin sistema de prospección</span>
+      <div class="cause-bar-wrap"><div class="cause-bar" style="width:58%; background:#BA7517;"></div></div>
+      <span class="cause-pct">58%</span>
+    </div>
+    <div class="cause-row">
+      <span class="cause-label">Falta de habilidades digitales</span>
+      <div class="cause-bar-wrap"><div class="cause-bar" style="width:52%; background:#BA7517;"></div></div>
+      <span class="cause-pct">52%</span>
+    </div>
+  </div>
+
+  <div class="timeline-card">
+    <p class="timeline-title">¿Cuántos sobreviven de cada 100 negocios?</p>
+    <div class="tl-row">
+      <span class="tl-year">Al inicio</span>
+      <div class="tl-bar-col">
+        <div class="tl-bar-bg"><div class="tl-bar-fill" style="width:100%; background:#5F5E5A;"><span class="tl-bar-text">100 negocios</span></div></div>
+      </div>
+    </div>
+    <div class="tl-row">
+      <span class="tl-year">1 año</span>
+      <div class="tl-bar-col">
+        <div class="tl-bar-bg"><div class="tl-bar-fill" style="width:66%; background:#A32D2D;"><span class="tl-bar-text">66 activos</span></div></div>
+        <p class="tl-sub">34 cerraron en el primer año</p>
+      </div>
+    </div>
+    <div class="tl-row">
+      <span class="tl-year">2 años</span>
+      <div class="tl-bar-col">
+        <div class="tl-bar-bg"><div class="tl-bar-fill" style="width:39%; background:#A32D2D;"><span class="tl-bar-text">39 activos</span></div></div>
+        <p class="tl-sub">27 más cerraron en el segundo año</p>
+      </div>
+    </div>
+    <div class="tl-row">
+      <span class="tl-year">5 años</span>
+      <div class="tl-bar-col">
+        <div class="tl-bar-bg"><div class="tl-bar-fill" style="width:15%; background:#791F1F;"><span class="tl-bar-text">15 activos</span></div></div>
+        <p class="tl-sub">Solo el 15% sobrevive a los 5 años</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="gresanova-card">
+    <span class="gr-badge">La solución — GRESANOVA</span>
+    <p class="gr-title">No seas parte de esa estadística</p>
+    <p class="gr-sub">GRESANOVA equipa a los emprendedores con las herramientas, habilidades y estructura que las pymes exitosas tienen desde el día uno.</p>
+    <div class="gr-grid">
+      <div class="gr-item">
+        <p class="gr-item-title">Presencia digital</p>
+        <p class="gr-item-desc">Redes sociales, contenido y posicionamiento desde el arranque</p>
+      </div>
+      <div class="gr-item">
+        <p class="gr-item-title">Sistema de ventas</p>
+        <p class="gr-item-desc">Prospección, seguimiento y cierre de clientes reales</p>
+      </div>
+      <div class="gr-item">
+        <p class="gr-item-title">Gestión y procesos</p>
+        <p class="gr-item-desc">Herramientas para operar y escalar tu negocio con orden</p>
+      </div>
+      <div class="gr-item">
+        <p class="gr-item-title">Mentoría y equipo</p>
+        <p class="gr-item-desc">Acompañamiento real, no solo un curso grabado</p>
+      </div>
+    </div>
+    <button class="gr-cta" onclick="sendPrompt('Genera el texto de WhatsApp para acompañar la infografía de pymes de GRESANOVA')">Generar mensaje de WhatsApp para esta infografía ↗</button>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+  const opts = { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { enabled: false } }, cutout: '72%' };
+
+  new Chart(document.getElementById('donut1'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Año 1','Año 2','Año 3','Sobreviven'],
+      datasets: [{ data: [34,27,15,15], backgroundColor: ['#E24B4A','#EF9F27','#BA7517','#D3D1C7'], borderWidth: 0 }]
+    },
+    options: { ...opts }
+  });
+
+  new Chart(document.getElementById('donut2'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Sin estrategia','Con estrategia'],
+      datasets: [{ data: [72,28], backgroundColor: ['#A32D2D','#1D9E75'], borderWidth: 0 }]
+    },
+    options: { ...opts }
+  });
+</script>
